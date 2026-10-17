@@ -1,5 +1,12 @@
+import '@fontsource-variable/dm-sans';
 import './style.css';
 import { researchContent } from './research.js';
+import { awardsContent } from './awards.js';
+
+function arrowIcon(direction) {
+  const path = direction === '↘' ? 'M4 4l8 8M4 12h8V4' : 'M4 12l8-8M4 4h8v8';
+  return `<svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${path}"/></svg>`;
+}
 
 const pages = {
   about: {
@@ -32,23 +39,14 @@ const pages = {
       <section class="section philosophy reveal"><span class="eyebrow">MY OPERATING PRINCIPLE</span><p>Ask a better question.<br>Build something <em>worth answering.</em></p><span class="asterisk">◎</span></section>`
   },
   research: { title: 'Research', content: researchContent },
-  awards: {
-    title: 'Awards',
-    content: `<section class="section page-intro reveal"><p class="eyebrow"><span class="status-dot"></span> 03 / MILESTONES ALONG THE WAY</p><h1>A little recognition.<br><span class="serif">A lot of motivation.</span></h1><p class="intro">A space for the milestones I’m proud of — and the work, people, and persistence behind them.</p></section>
-      <section class="section awards-section reveal"><div class="awards-heading"><span>SELECTED HONORS</span><span>THE JOURNEY, SO FAR ↙</span></div>${[
-        ['01', '[Award or distinction]', '[Awarding organization]', '[Explain what this award recognizes and the work that earned it.]', 'RESEARCH'],
-        ['02', '[Award or distinction]', '[Awarding organization]', '[Add context: your contribution, the scope of the competition, or why it matters to you.]', 'ENGINEERING'],
-        ['03', '[Award or distinction]', '[Awarding organization]', '[Share the story behind this milestone.]', 'ACADEMIC'],
-        ['04', '[Award or distinction]', '[Awarding organization]', '[Add another achievement, honor, or community recognition.]', 'COMMUNITY']
-      ].map(([n, title, org, desc, category]) => `<article class="award-row"><span class="award-index">${n}</span><div><span class="tags"><span>${category}</span></span><h2>${title}</h2><p class="award-org">${org}</p><p>${desc}</p></div><div class="award-year">[YEAR]<span>✧</span></div></article>`).join('')}<p class="placeholder-note">These are placeholders for your achievements. We’ll add the real names, dates, and stories next.</p></section><section class="section closing reveal"><span class="eyebrow">THE BEST PART?</span><h2>There’s still so much<br><em>left to discover.</em> <span>↗</span></h2><a class="button" href="/research" data-link>See the work behind it <span>↗</span></a></section>`
-  }
+  awards: { title: 'Awards', content: awardsContent }
 };
 
 function render() {
   const route = location.pathname.replace(/\/$/, '').slice(1) || 'about';
   const key = pages[route] ? route : 'about';
   document.title = `${pages[key].title} — Guneet Kapur`;
-  document.querySelector('#app').innerHTML = `<div class="scroll-progress"></div><header class="site-header"><a href="/" class="wordmark" data-link aria-label="Home">GK<span>◎</span></a><nav aria-label="Main navigation">${Object.entries(pages).map(([id, page], i) => `<a href="${id === 'about' ? '/' : '/' + id}" data-link ${key === id ? 'aria-current="page"' : ''}><span class="nav-number">0${i + 1}</span>${page.title}<span class="nav-dot"></span></a>`).join('')}</nav><span class="header-note">PERSONAL PORTFOLIO <span>↗</span></span></header><main>${pages[key].content}</main><footer class="section"><a href="/" class="wordmark" data-link>GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>`;
+  document.querySelector('#app').innerHTML = `<div class="scroll-progress"></div><header class="site-header"><a href="/" class="wordmark" data-link aria-label="Home">GK<span>◎</span></a><nav aria-label="Main navigation">${Object.entries(pages).map(([id, page], i) => `<a href="${id === 'about' ? '/' : '/' + id}" data-link ${key === id ? 'aria-current="page"' : ''}><span class="nav-number">0${i + 1}</span>${page.title}<span class="nav-dot"></span></a>`).join('')}</nav><span class="header-note">PERSONAL PORTFOLIO <span>↗</span></span></header><main>${pages[key].content}</main><footer class="section"><a href="/" class="wordmark" data-link>GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>`.replace(/[↗↘]/g, arrowIcon);
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
   }), { threshold: 0.08 });

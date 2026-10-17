@@ -1,8 +1,10 @@
 const asset = name => `/research/${name}`;
 
-function documentReader(title, file, description, open = false) {
-  return `<article class="document-card">
-    <div class="document-header"><div><h3>${title}</h3><p>${description}</p></div><a class="document-link" href="${asset(file)}" target="_blank" rel="noopener">Open PDF ↗</a></div>
+function documentReader(title, file, description, open = false, options = {}) {
+  const { award = false, linkLabel = 'Open PDF ↗' } = options;
+  const link = `<a class="document-link" href="${asset(file)}" target="_blank" rel="noopener">${linkLabel}</a>`;
+  return `<article class="document-card${award ? ' research-award-card' : ''}">
+    <div class="document-header"><div><h3>${title}</h3>${award ? link : ''}<p>${description}</p></div>${award ? '' : link}</div>
     <details class="document-reader" ${open ? 'open' : ''}><summary>Read here <span>Expand / collapse ↓</span></summary>
       <object data="${asset(file)}" type="application/pdf" aria-label="${title}"><p>This browser doesn’t support inline PDF reading. <a href="${asset(file)}" target="_blank" rel="noopener">Open the PDF separately ↗</a></p></object>
       <p class="reader-note">Scroll inside the document to read. You can also open the PDF separately above.</p>
@@ -35,19 +37,15 @@ export const researchContent = `
       </div>
       <div class="research-details"><div><span class="eyebrow">The question</span><p>How accurately can a humanoid robotic hand reproduce recorded dance hand gestures using motion-capture data?</p></div><div><span class="eyebrow">The approach</span><p>3D printing, Arduino, MediaPipe, and OpenCV connect captured joint angles to repeatable physical gestures.</p></div><div><span class="eyebrow">Looking ahead</span><p>A shared cultural gesture archive, with future work exploring wrist movement and testing across more participants.</p></div></div>
 
-      <div class="project-recognition"><div class="subsection-heading"><span class="eyebrow">Recognition</span><h3>Where this work has taken me.</h3></div>
-        <div class="recognition-grid">
-          <article><span class="honor-symbol">01</span><h4>First Place · Engineering</h4><p>Terra North Jersey STEM Fair · 2026</p><p>Recognized for the motion-capture driven humanoid hand project.</p><a href="https://tnjsf.org/cgi-bin/AwardsList.pl" target="_blank" rel="noopener">Official awards list ↗</a></article>
-          <article><span class="honor-symbol">02</span><h4>First Place · Senior Exhibition</h4><p>Robofest · 2026</p><p>Robotic replication of cultural dance hand gestures, at the LTU–USA Video Qualifier.</p><a href="${asset('robofest-award.pdf')}" target="_blank" rel="noopener">View trophy & certificate ↗</a></article>
-          <article><span class="honor-symbol">03</span><h4>Silver Key</h4><p>Scholastic Art & Writing Awards · 2026</p><p>“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art.</p><a href="${asset('silver-key-certificate.pdf')}" target="_blank" rel="noopener">View certificate ↗</a></article>
-        </div>
-      </div>
       <div class="project-documents"><div class="subsection-heading"><span class="eyebrow">Read the work</span><h3>The research, in full.</h3></div>
         ${documentReader('Research paper', 'robotic-hand-paper.pdf', 'Background, methods, results, and future directions.', true)}
         ${documentReader('Project abstract', 'robotic-hand-abstract.pdf', 'The original overview of the robotic hand project.')}
-        ${documentReader('TNJSF award certificate', 'tnjsf-certificate.pdf', 'First Place in Engineering · March 22, 2026.')}
-        ${documentReader('Robofest trophy & certificate', 'robofest-award.pdf', 'First Place Senior Exhibition trophy and participation certificate · 2026.')}
-        ${documentReader('Scholastic Silver Key certificate', 'silver-key-certificate.pdf', 'Preserving Traditions through Robotics · 2026.')}
+      </div>
+      <div class="research-awards"><div class="subsection-heading"><span class="eyebrow">Project recognition</span><h3>Awards & distinctions</h3></div>
+        ${documentReader('TNJSF — First Place in Engineering & ISEF Grand Trip Finalist', 'tnjsf-certificate.pdf', 'Terra North Jersey STEM Fair · 2026', false, { award: true, linkLabel: 'Click here for the Award Certificate.' })}
+        <p class="official-awards-link"><a href="https://tnjsf.org/cgi-bin/AwardsList.pl" target="_blank" rel="noopener">View the official TNJSF awards list ↗</a></p>
+        ${documentReader('Robofest — First Place Senior Exhibition and Advancement to the World Championships', 'robofest-award.pdf', 'Robotic replication of cultural dance hand gestures · 2026', false, { award: true, linkLabel: 'Click here for Trophy and Certificate.' })}
+        ${documentReader('Scholastic Art & Writing Awards — Silver Key', 'silver-key-certificate.pdf', '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art · 2026', false, { award: true, linkLabel: 'Click here for the Silver Key Certificate.' })}
       </div>
     </div>
   </section>
