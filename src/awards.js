@@ -39,7 +39,7 @@ export const awardGroups = [
 export const awardsContent = `
   <section class="section page-intro honors-intro reveal">
     <p class="eyebrow"><span class="status-dot"></span> Awards & distinctions · 2024–2026</p>
-    <h1>Milestones<br><span class="serif">along the way.</span></h1>
+    <h2 id="awards-heading" class="page-title">Milestones<br><span class="serif">along the way.</span></h2>
     <p class="intro">From the research lab to the robotics field and the dance floor — moments of recognition across the things I love.</p>
     <nav class="honors-chapters" aria-label="Award categories">${awardGroups.map(group => `<a class="chapter-link ${group.color}" href="#${group.id}"><span class="chapter-number">${group.number}</span><span>${group.title}</span><span aria-hidden="true">↘</span></a>`).join('')}</nav>
   </section>
@@ -53,4 +53,4 @@ export const awardsContent = `
       </div>
     </article>`).join('')}</div>
   </section>`).join('')}
-  <section class="section closing honors-closing reveal"><span class="eyebrow">Still curious. Still building.</span><h2>Every milestone opens<br>another possibility.</h2><a class="button" href="/research" data-link>Explore my research <span>↗</span></a></section>`;
+  <section class="section closing honors-closing reveal"><span class="eyebrow">Still curious. Still building.</span><h2>Every milestone opens<br>another possibility.</h2><a class="button" href="#research">Explore my research <span>↗</span></a></section>`;

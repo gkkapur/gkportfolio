@@ -8,16 +8,16 @@ function arrowIcon(direction) {
   return `<svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${path}"/></svg>`;
 }
 
-const pages = {
+const sections = {
   about: {
     title: 'About',
     content: `
       <section class="hero section reveal">
         <div class="hero-copy">
           <div class="eyebrow"><span class="status-dot"></span> A WORK IN PROGRESS. ALWAYS.</div>
-          <h1>Curiosity.<br>Code.<br><span class="serif">Possibility.</span><span class="period">◎</span></h1>
+          <h1 id="about-heading">Curiosity.<br>Code.<br><span class="serif">Possibility.</span><span class="period">◎</span></h1>
           <p class="intro">Hi, I’m <strong>Guneet Kapur</strong> — a student exploring computer science, engineering, and the things we haven’t figured out yet.</p>
-          <a class="button" href="/research" data-link>Explore my work <span>↗</span></a>
+          <a class="button" href="#research">Explore my work <span>↗</span></a>
           <a class="scroll-link" href="#beyond">SCROLL TO GET TO KNOW ME <span>↓</span></a>
         </div>
         <div class="portrait-wrap">
@@ -42,40 +42,78 @@ const pages = {
   awards: { title: 'Awards', content: awardsContent }
 };
 
-function render() {
-  const route = location.pathname.replace(/\/$/, '').slice(1) || 'about';
-  const key = pages[route] ? route : 'about';
-  document.title = `${pages[key].title} — Guneet Kapur`;
-  document.querySelector('#app').innerHTML = `<div class="scroll-progress"></div><header class="site-header"><a href="/" class="wordmark" data-link aria-label="Home">GK<span>◎</span></a><nav aria-label="Main navigation">${Object.entries(pages).map(([id, page], i) => `<a href="${id === 'about' ? '/' : '/' + id}" data-link ${key === id ? 'aria-current="page"' : ''}><span class="nav-number">0${i + 1}</span>${page.title}<span class="nav-dot"></span></a>`).join('')}</nav><span class="header-note">PERSONAL PORTFOLIO <span>↗</span></span></header><main>${pages[key].content}</main><footer class="section"><a href="/" class="wordmark" data-link>GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>`.replace(/[↗↘]/g, arrowIcon);
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  }), { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  updateProgress();
+// Preserve links shared before the portfolio became a single page.
+const legacySection = location.pathname.replace(/^\/|\/$/g, '');
+if (['about', 'research', 'awards'].includes(legacySection)) {
+  history.replaceState(history.state, '', `/${location.search}${location.hash || `#${legacySection}`}`);
+}
+function normalizeLegacyHash() {
+  if (!location.hash.startsWith('#/')) return false;
+  history.replaceState(history.state, '', `#${location.hash.slice(2) || 'about'}`);
+  return true;
+}
+normalizeLegacyHash();
+
+document.title = 'Guneet Kapur — Personal Portfolio';
+document.querySelector('#app').innerHTML = `
+  <div class="scroll-progress"></div>
+  <header class="site-header">
+    <a href="#about" class="wordmark" aria-label="Back to About">GK<span>◎</span></a>
+    <nav aria-label="Main navigation">${Object.entries(sections).map(([id, section], i) => `<a href="#${id}" ${id === 'about' ? 'aria-current="location"' : ''}><span class="nav-number">0${i + 1}</span>${section.title}<span class="nav-dot"></span></a>`).join('')}</nav>
+    <span class="header-note">PERSONAL PORTFOLIO <span>↗</span></span>
+  </header>
+  <main>${Object.entries(sections).map(([id, section]) => `<section id="${id}" class="portfolio-section" aria-labelledby="${id}-heading">${section.content}</section>`).join('')}</main>
+  <footer class="section"><a href="#about" class="wordmark" aria-label="Back to About">GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#about" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>
+`.replace(/[↗↘]/g, arrowIcon);
+
+const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+  if (entry.isIntersecting) {
+    entry.target.classList.add('visible');
+    revealObserver.unobserve(entry.target);
+  }
+}), { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const header = document.querySelector('.site-header');
+const portfolioSections = [...document.querySelectorAll('.portfolio-section')];
+const navLinks = [...document.querySelectorAll('nav[aria-label="Main navigation"] a')];
+let updateScheduled = false;
+
+function updateScrollState() {
+  updateScheduled = false;
+  const max = document.documentElement.scrollHeight - innerHeight;
+  document.querySelector('.scroll-progress').style.width = `${max > 0 ? scrollY / max * 100 : 0}%`;
+  const threshold = header.getBoundingClientRect().height + 32;
+  let current = 'about';
+  for (const section of portfolioSections) {
+    if (section.getBoundingClientRect().top <= threshold) current = section.id;
+  }
+  for (const link of navLinks) {
+    if (link.hash === `#${current}`) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
 }
 
-document.addEventListener('click', e => {
-  const anchor = e.target.closest('a[href^="#"]:not([data-link])');
-  if (anchor && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0) {
-    e.preventDefault();
-    const target = anchor.getAttribute('href').slice(1);
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!target) window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' });
-    else document.getElementById(target)?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' });
-    return;
+function scheduleScrollUpdate() {
+  if (!updateScheduled) {
+    updateScheduled = true;
+    requestAnimationFrame(updateScrollState);
   }
-  const link = e.target.closest('a[data-link]');
-  if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-  e.preventDefault();
-  history.pushState({}, '', link.getAttribute('href'));
-  render();
-  window.scrollTo({ top: 0, behavior: 'instant' });
-});
-function updateProgress() {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  const bar = document.querySelector('.scroll-progress');
-  if (bar) bar.style.width = `${max > 0 ? scrollY / max * 100 : 0}%`;
 }
-window.addEventListener('scroll', updateProgress, { passive: true });
-window.addEventListener('popstate', () => { render(); window.scrollTo(0, 0); });
-render();
+window.addEventListener('scroll', scheduleScrollUpdate, { passive: true });
+window.addEventListener('resize', scheduleScrollUpdate);
+window.addEventListener('hashchange', () => {
+  if (normalizeLegacyHash()) {
+    document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+  }
+  scheduleScrollUpdate();
+});
+new ResizeObserver(scheduleScrollUpdate).observe(document.querySelector('main'));
+
+// The target sections are inserted by this module, so handle an initial deep link
+// after layout; subsequent links and browser history use native anchor behavior.
+requestAnimationFrame(() => {
+  const target = document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView({ behavior: 'instant' });
+  updateScrollState();
+});

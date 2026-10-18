@@ -17,9 +17,6 @@ research = research.replace('const asset = name => `/research/${name}`;', 'const
 awards = (root / 'src/awards.js').read_text().replace('export const ', 'const ')
 awards = awards.replace('href="/research/${award.file}"', 'href="${previewAssets[award.file]}"')
 main = (root / 'src/main.js').read_text().replace("import './style.css';", '').replace("import '@fontsource-variable/dm-sans';", '').replace("import { researchContent } from './research.js';", '').replace("import { awardsContent } from './awards.js';", '')
-main = main.replace("location.pathname.replace(/\\/$/, '').slice(1)", "location.hash.replace(/^#\\/?/, '')")
-main = main.replace('href="/research"', 'href="#/research"').replace('href="/"', 'href="#/"')
-main = main.replace("id === 'about' ? '/' : '/' + id", "id === 'about' ? '#/' : '#/' + id")
 font_root = root / 'node_modules/@fontsource-variable/dm-sans'
 font_css = (font_root / 'index.css').read_text()
 for font_path in re.findall(r'url\(\./(files/[^)]+)\)', font_css):
