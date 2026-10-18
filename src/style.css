@@ -174,3 +174,6 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
   .site-header nav{grid-column:1 / -1;grid-row:2;margin-left:0;width:100%;justify-content:center;gap:28px}
   .site-header nav a{padding:10px 0}
 }
+
+/* Casual-save deterrents; the original files remain accessible to browsers. */
+img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}

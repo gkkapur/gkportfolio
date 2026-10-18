@@ -1,16 +1,17 @@
 const asset = name => `/research/${name}`;
+const pdfView = name => `${asset(name)}#toolbar=0&navpanes=0`;
 
 function pdfReader(title, file, open = false, label = 'Read here') {
   return `<details class="document-reader" ${open ? 'open' : ''}><summary>${label} <span>Expand / collapse ↓</span></summary>
-      <object data="${asset(file)}" type="application/pdf" aria-label="${title}"><p>This browser doesn’t support inline PDF reading. <a href="${asset(file)}" target="_blank" rel="noopener">Open the PDF separately ↗</a></p></object>
+      <object data="${pdfView(file)}" type="application/pdf" aria-label="${title}"><p>This browser doesn’t support inline PDF reading. <a href="${pdfView(file)}" target="_blank" rel="noopener">Open the PDF separately ↗</a></p></object>
       <p class="reader-note">Scroll inside the document to read. You can also open the PDF separately above.</p>
     </details>`;
 }
 
 function documentReader(title, file, description, open = false, options = {}) {
   const { award = false, linkLabel = 'Open PDF ↗', relatedDocument } = options;
-  const link = `<a class="document-link" href="${asset(file)}" target="_blank" rel="noopener">${linkLabel}</a>`;
-  const relatedLink = relatedDocument ? `<a class="document-link related-document-link" href="${asset(relatedDocument.file)}" target="_blank" rel="noopener">View the ${relatedDocument.title} ↗</a>` : '';
+  const link = `<a class="document-link" href="${pdfView(file)}" target="_blank" rel="noopener">${linkLabel}</a>`;
+  const relatedLink = relatedDocument ? `<a class="document-link related-document-link" href="${pdfView(relatedDocument.file)}" target="_blank" rel="noopener">View the ${relatedDocument.title} ↗</a>` : '';
   return `<article class="document-card${award ? ' research-award-card' : ''}">
     <div class="document-header"><div><h3>${title}</h3>${award ? link : ''}${relatedLink}<p>${description}</p></div>${award ? '' : link}</div>
     ${pdfReader(title, file, open)}
@@ -27,9 +28,9 @@ export const researchContent = `
         <div class="page-index"><a href="#project-01">01 — Robotics & culture ↓</a><a href="#project-02">02 — Machine learning ↓</a></div>
       </div>
       <div class="research-photos" aria-label="Photos from the Terra North Jersey STEM Fair">
-        <figure class="research-photo presentation"><a href="${asset('tnjsf-award-presentation.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF award presentation photo"><img src="${asset('tnjsf-award-presentation.webp')}" alt="A student shaking hands with a presenter on the TNJSF awards stage" width="1070" height="1426" decoding="async"></a></figure>
-        <figure class="research-photo display"><a href="${asset('tnjsf-research-display.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF research display photo"><img src="${asset('tnjsf-research-display.webp')}" alt="Student beside the motion-capture driven robotic hand research display at TNJSF" width="1169" height="1600" decoding="async"></a></figure>
-        <figure class="research-photo ceremony"><a href="${asset('tnjsf-award-ceremony.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF awards ceremony photo"><img src="${asset('tnjsf-award-ceremony.webp')}" alt="Students holding certificates at the Terra North Jersey STEM Fair awards ceremony" width="1200" height="935" decoding="async"></a></figure>
+        <figure class="research-photo presentation"><a href="${asset('tnjsf-award-presentation.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF award presentation photo"><img draggable="false" src="${asset('tnjsf-award-presentation.webp')}" alt="A student shaking hands with a presenter on the TNJSF awards stage" width="1070" height="1426" decoding="async"></a></figure>
+        <figure class="research-photo display"><a href="${asset('tnjsf-research-display.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF research display photo"><img draggable="false" src="${asset('tnjsf-research-display.webp')}" alt="Student beside the motion-capture driven robotic hand research display at TNJSF" width="1169" height="1600" decoding="async"></a></figure>
+        <figure class="research-photo ceremony"><a href="${asset('tnjsf-award-ceremony.webp')}" target="_blank" rel="noopener" aria-label="Open the TNJSF awards ceremony photo"><img draggable="false" src="${asset('tnjsf-award-ceremony.webp')}" alt="Students holding certificates at the Terra North Jersey STEM Fair awards ceremony" width="1200" height="935" decoding="async"></a></figure>
       </div>
     </div>
   </section>

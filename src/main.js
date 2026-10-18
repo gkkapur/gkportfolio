@@ -23,7 +23,7 @@ const sections = {
         </div>
         <div class="portrait-wrap">
           <div class="portrait-frame">
-            <img class="portrait-image" src="${portraitUrl}" alt="Portrait of Guneet Kapur" width="1038" height="1296" fetchpriority="high" decoding="async">
+            <img draggable="false" class="portrait-image" src="${portraitUrl}" alt="Portrait of Guneet Kapur" width="1038" height="1296" fetchpriority="high" decoding="async">
           </div>
         </div>
       </section>
@@ -63,6 +63,16 @@ document.querySelector('#app').innerHTML = `
   <main>${Object.entries(sections).map(([id, section]) => `<section id="${id}" class="portfolio-section" aria-labelledby="${id}-heading">${section.content}</section>`).join('')}</main>
   <footer class="section"><a href="#about" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>
 `.replace(/[↗↘]/g, arrowIcon);
+
+// Discourage casual saving of photos while preserving normal text menus and links.
+const photoTarget = 'img, .research-photo a';
+for (const eventName of ['contextmenu', 'dragstart']) {
+  document.addEventListener(eventName, event => {
+    if (event.target instanceof Element && event.target.closest(photoTarget)) {
+      event.preventDefault();
+    }
+  });
+}
 
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) {

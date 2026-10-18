@@ -55,13 +55,12 @@ export const awardsContent = `
     <div class="honors-grid">${group.awards.map((award, i) => `<article class="honor-card reveal">
       <div class="honor-card-top"><span class="honor-organization">${award.organization}</span><span class="honor-sequence" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>
         <h3>${award.title}</h3>${award.detail ? `<p class="honor-detail">${award.detail}</p>` : ''}
-        <div class="honor-card-bottom"><time datetime="${awardDateTime(award.date)}">${award.date}</time>${award.file ? `<div class="honor-document-links"><a href="/research/${award.file}" target="_blank" rel="noopener">${award.link}</a>${award.relatedFile ? `<a href="/research/${award.relatedFile}" target="_blank" rel="noopener">${award.relatedLink}</a>` : ''}</div>` : '<span class="honor-ring" aria-hidden="true">◎</span>'}</div>
+        <div class="honor-card-bottom"><time datetime="${awardDateTime(award.date)}">${award.date}</time>${award.file ? `<div class="honor-document-links"><a href="/research/${award.file}#toolbar=0&navpanes=0" target="_blank" rel="noopener">${award.link}</a>${award.relatedFile ? `<a href="/research/${award.relatedFile}#toolbar=0&navpanes=0" target="_blank" rel="noopener">${award.relatedLink}</a>` : ''}</div>` : '<span class="honor-ring" aria-hidden="true">◎</span>'}</div>
     </article>`).join('')}</div>
   </section>`).join('')}
   <section id="contact" class="section closing honors-closing contact-box reveal" aria-labelledby="contact-heading">
     <div class="contact-copy"><h2 id="contact-heading">Contact Me!</h2><p class="contact-intro">Feel free to reach out to talk, I am open to discussions with anyone!</p></div>
     <address class="contact-details">
-      <a href="tel:+19087391570"><span class="contact-label">Phone</span><span class="contact-value">908-739-1570</span></a>
       <a href="mailto:guneet@kapurs.ws"><span class="contact-label">Email</span><span class="contact-value">guneet@kapurs.ws</span></a>
     </address>
   </section>`;

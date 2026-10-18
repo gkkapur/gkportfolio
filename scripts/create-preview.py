@@ -16,8 +16,8 @@ bootstrap += "const previewAssets = Object.fromEntries(Object.entries(embeddedAs
 research = (root / 'src/research.js').read_text().replace('export const researchContent', 'const researchContent')
 research = research.replace('const asset = name => `/research/${name}`;', 'const asset = name => previewAssets[name];')
 awards = (root / 'src/awards.js').read_text().replace('export const ', 'const ')
-awards = awards.replace('href="/research/${award.file}"', 'href="${previewAssets[award.file]}"')
-awards = awards.replace('href="/research/${award.relatedFile}"', 'href="${previewAssets[award.relatedFile]}"')
+awards = awards.replace('/research/${award.file}', '${previewAssets[award.file]}')
+awards = awards.replace('/research/${award.relatedFile}', '${previewAssets[award.relatedFile]}')
 main = (root / 'src/main.js').read_text().replace("import './style.css';", '').replace("import '@fontsource-variable/dm-sans';", '').replace("import { researchContent } from './research.js';", '').replace("import { awardsContent } from './awards.js';", '')
 main = main.replace("'/images/guneet-kapur.webp'", "previewAssets['guneet-kapur.webp']")
 font_root = root / 'node_modules/@fontsource-variable/dm-sans'

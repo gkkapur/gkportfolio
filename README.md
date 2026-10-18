@@ -22,3 +22,7 @@ Styles live in `src/style.css`. DM Sans is self-hosted through the pinned `@font
 ## Downloadable preview
 
 Run `python3 scripts/create-preview.py` to refresh `/workspace/portfolio-preview.html`. It contains all documents and the video as embedded assets, so no server or publishing is needed. The file is approximately 16 MB. In browsers supporting inline PDFs, expand a reader to scroll through a document, or use its Open PDF link to read it separately.
+
+## Casual saving deterrents
+
+Images disable native dragging and image context menus within the page. Text context menus, normal links, and keyboard navigation remain available. Embedded and separately opened PDFs request hidden viewer toolbars through `#toolbar=0&navpanes=0`; support depends on the browser. These settings discourage casual saving but cannot prevent file downloads, screenshots, or direct access to public assets.
