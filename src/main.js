@@ -18,7 +18,7 @@ const sections = {
         <div class="hero-copy">
           <p class="hero-topics">Robotics <span aria-hidden="true">·</span> Machine Learning <span aria-hidden="true">·</span> Dance <span aria-hidden="true">·</span> Creativity</p>
           <h1 id="about-heading">Guneet<br><span class="serif">Kapur</span></h1>
-          <p class="intro">Hi, I'm <strong>Guneet</strong> and I love bringing <strong>technology and creativity</strong> together. I'm a student exploring computer science and engineering through robotics, machine learning, and dance. From building a robotic hand to preserve cultural dance gestures to finding patterns in data, I’m drawn to projects that connect my interests in unexpected ways. I want to build thoughtful, useful things that make a difference to the people and communities around me.</p>
+          <p class="intro">Hi, I’m Guneet! I’m a high school senior interested in computer science, robotics, and all things creative. My passion lies in exploring how dance and technology intersect and <strong>finding connections between disciplines people don’t often think to bring together</strong>. I’m drawn to projects that combine my interests in unexpected ways, and I want to build thoughtful, useful things that make a difference to the people and communities around me.</p>
           <a class="scroll-link" href="#beyond">SCROLL TO GET TO KNOW ME <span>↓</span></a>
         </div>
         <div class="portrait-wrap">
