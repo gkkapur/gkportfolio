@@ -7,7 +7,7 @@ import mimetypes
 
 root = Path(__file__).resolve().parent.parent
 assets = {}
-for path in (root / 'public' / 'research').iterdir():
+for path in [*(root / 'public' / 'research').iterdir(), *(root / 'public' / 'images').iterdir()]:
     mime = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
     assets[path.name] = {'mime': mime, 'data': base64.b64encode(path.read_bytes()).decode()}
 
@@ -19,6 +19,7 @@ awards = (root / 'src/awards.js').read_text().replace('export const ', 'const ')
 awards = awards.replace('href="/research/${award.file}"', 'href="${previewAssets[award.file]}"')
 awards = awards.replace('href="/research/${award.relatedFile}"', 'href="${previewAssets[award.relatedFile]}"')
 main = (root / 'src/main.js').read_text().replace("import './style.css';", '').replace("import '@fontsource-variable/dm-sans';", '').replace("import { researchContent } from './research.js';", '').replace("import { awardsContent } from './awards.js';", '')
+main = main.replace("'/images/guneet-kapur.webp'", "previewAssets['guneet-kapur.webp']")
 font_root = root / 'node_modules/@fontsource-variable/dm-sans'
 font_css = (font_root / 'index.css').read_text()
 for font_path in re.findall(r'url\(\./(files/[^)]+)\)', font_css):

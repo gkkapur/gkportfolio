@@ -136,3 +136,12 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .honor-document-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
 .research-award-card .related-document-link{display:block}
 @media(max-width:700px){.honor-organization{font-size:21px}}
+
+/* Personal introduction and the supplied portrait. */
+.hero-topics{font-size:12px;font-weight:600;line-height:1.8;letter-spacing:.2px;color:#82708f;margin:0}
+.hero-topics span{color:#a17ac1;padding:0 3px}
+.hero .intro{max-width:510px;font-size:16px;line-height:1.85}
+.hero .portrait-wrap{padding-top:0;width:100%;max-width:440px;justify-self:end}
+.hero .portrait-frame{padding:10px}
+.portrait-image{display:block;width:100%;height:auto}
+@media(max-width:700px){.hero .intro{font-size:15px}.hero .portrait-wrap{max-width:380px;padding:0 12px;justify-self:center}.hero .portrait-frame{padding:8px}.hero-topics{font-size:11px}}

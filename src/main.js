@@ -3,6 +3,8 @@ import './style.css';
 import { researchContent } from './research.js';
 import { awardsContent } from './awards.js';
 
+const portraitUrl = '/images/guneet-kapur.webp';
+
 function arrowIcon(direction) {
   const path = direction === '↘' ? 'M4 4l8 8M4 12h8V4' : 'M4 12l8-8M4 4h8v8';
   return `<svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${path}"/></svg>`;
@@ -14,19 +16,15 @@ const sections = {
     content: `
       <section class="hero section reveal">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="status-dot"></span> A WORK IN PROGRESS. ALWAYS.</div>
-          <h1 id="about-heading">Curiosity.<br>Code.<br><span class="serif">Possibility.</span><span class="period">◎</span></h1>
-          <p class="intro">Hi, I’m <strong>Guneet Kapur</strong> — a student exploring computer science, engineering, and the things we haven’t figured out yet.</p>
-          <a class="button" href="#research">Explore my work <span>↗</span></a>
+          <p class="hero-topics">Robotics <span aria-hidden="true">·</span> Machine Learning <span aria-hidden="true">·</span> Dance <span aria-hidden="true">·</span> Creativity</p>
+          <h1 id="about-heading">Guneet<br><span class="serif">Kapur</span></h1>
+          <p class="intro">Hi, I'm <strong>Guneet</strong> and I love bringing <strong>technology and creativity</strong> together. I'm a student exploring computer science and engineering through robotics, machine learning, and dance. From building a robotic hand to preserve cultural dance gestures to finding patterns in data, I’m drawn to projects that connect my interests in unexpected ways. I want to build thoughtful, useful things that make a difference to the people and communities around me.</p>
           <a class="scroll-link" href="#beyond">SCROLL TO GET TO KNOW ME <span>↓</span></a>
         </div>
         <div class="portrait-wrap">
           <div class="portrait-frame">
-            <span class="frame-label">FIG. 01 / THE PERSON BEHIND THE PROJECTS</span>
-            <div class="portrait-art" role="img" aria-label="Placeholder for your portrait"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="portrait-star">◎</span><span class="cross cross-one">+</span><span class="cross cross-two">+</span><div class="photo-label"><span>YOUR PHOTO GOES HERE</span><small>A face to put to the ideas.</small></div></div>
-            <div class="portrait-caption"><span>[ GUNEET KAPUR ]</span><span>STUDENT · BUILDER · EXPLORER</span></div>
+            <img class="portrait-image" src="${portraitUrl}" alt="Portrait of Guneet Kapur" width="1038" height="1296" fetchpriority="high" decoding="async">
           </div>
-          <div class="floating-note"><span>⌘</span> Learning by making.</div>
         </div>
       </section>
       <div class="ticker" aria-label="Curiosity, experimentation, iteration"><div>CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span> CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span></div></div>
