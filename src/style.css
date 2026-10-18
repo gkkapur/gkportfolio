@@ -110,14 +110,15 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .research-intro-copy{min-width:0}
 .research-intro .page-title{font-size:clamp(52px,5.3vw,72px);margin-top:0}
 .research-intro .intro{max-width:530px}
-.research-photos{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px;align-items:start;padding:12px 10px}
-.research-photo{margin:0;padding:9px 9px 0;background:#fff;border:1px solid #e3d8ed;box-shadow:0 9px 22px #5034660c;min-width:0}
-.research-photo.ceremony{grid-column:1 / -1;width:72%;justify-self:center;transform:rotate(-2deg);background:#fff5f9}
-.research-photo.presentation{transform:rotate(-3deg);background:#fff4fa}
-.research-photo.display{align-self:start;transform:rotate(3deg);background:#f1f4ff}
+.research-photos{position:relative;isolation:isolate;aspect-ratio:1 / 1.12;width:100%}
+.research-photo{position:absolute;margin:0;padding:8px;background:#fff;border:1px solid #e3d8ed;box-shadow:0 9px 22px #50346614;min-width:0;transition:transform .25s ease,box-shadow .25s ease}
+.research-photo.presentation{width:52%;left:2%;top:4%;transform:rotate(-5deg);background:#fff4fa;z-index:1}
+.research-photo.display{width:52%;left:44%;top:1%;transform:rotate(5deg);background:#f1f4ff;z-index:2}
+.research-photo.ceremony{width:80%;left:10%;top:42%;transform:rotate(-3deg);background:#fff5f9;z-index:3}
+.research-photo:is(:hover,:focus-within){z-index:10;transform:translateY(-12px) rotate(0deg) scale(1.035);box-shadow:0 18px 35px #5034662b}
+.research-photo:hover{z-index:12}
 .research-photo a{display:block}
 .research-photo img{display:block;width:100%;height:auto}
-.research-photo figcaption{font-size:10px;line-height:1.7;padding:11px 2px;color:#796984}
 .project .tags span{font-size:13px;line-height:1.5;font-weight:600;letter-spacing:.2px;padding:8px 12px}
 .research-question{font-size:16px;line-height:1.85;color:var(--muted);border-top:1px solid var(--line);padding-top:25px;margin:32px 0}
 .research-question strong{color:var(--ink);font-weight:700}
@@ -125,4 +126,4 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .research-award-card .document-header h3{font-size:clamp(24px,2.35vw,32px)}
 .research-award-card:nth-of-type(4){background:#fdf0f7;border-color:#ecdae5}
 @media(max-width:1000px){.research-intro-layout{grid-template-columns:1fr;gap:35px}.research-photos{max-width:530px;width:100%;justify-self:center}.research-intro .page-title{font-size:64px}}
-@media(max-width:700px){.research-intro-layout{gap:30px}.research-intro .page-title{font-size:52px}.research-photos{gap:12px;padding:10px 7px}.research-photo{padding:6px 6px 0}.research-photo.ceremony{width:85%}.research-photo figcaption{font-size:9px;padding:9px 1px}.project .tags span{font-size:12px;padding:7px 10px}.research-question{font-size:14px}.research-award-card .document-header h3{font-size:24px}}
+@media(max-width:700px){.research-intro-layout{gap:30px}.research-intro .page-title{font-size:52px}.research-photo{padding:6px}.project .tags span{font-size:12px;padding:7px 10px}.research-question{font-size:14px}.research-award-card .document-header h3{font-size:24px}}
