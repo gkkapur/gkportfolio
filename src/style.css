@@ -162,3 +162,15 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 #project-01 .research-award-card .document-link{font-size:12px;margin-bottom:6px}
 #project-01 .research-award-card .document-reader summary{padding:10px 22px}
 @media(max-width:700px){#project-01 .research-award-card .document-header{padding:16px 18px}#project-01 .research-award-card .document-header h3{font-size:22px}#project-01 .research-award-card .document-reader summary{padding:10px 18px}}
+
+.site-header nav{margin-left:auto}
+.header-contact{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;background:transparent;border:2px solid #9875b5;color:#76518f;border-radius:5px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s,transform .2s}
+.header-contact:hover{background:#f0e7fa;transform:translateY(-2px)}
+@media(max-width:700px){
+  html{scroll-padding-top:130px}
+  .site-header{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;height:112px;column-gap:16px;row-gap:4px;padding-top:12px;padding-bottom:6px}
+  .site-header .wordmark{grid-column:1;grid-row:1;justify-self:start}
+  .site-header .header-contact{grid-column:2;grid-row:1;padding:9px 13px;font-size:12px}
+  .site-header nav{grid-column:1 / -1;grid-row:2;margin-left:0;width:100%;justify-content:center;gap:28px}
+  .site-header nav a{padding:10px 0}
+}
