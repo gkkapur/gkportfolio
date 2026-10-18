@@ -4,6 +4,8 @@ import { researchContent } from './research.js';
 import { awardsContent } from './awards.js';
 
 const portraitUrl = '/images/guneet-kapur.webp';
+const tickerItems = 'CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span>';
+const tickerGroup = `<div class="ticker-group">${tickerItems.repeat(2)}</div>`;
 
 function arrowIcon(direction) {
   const path = direction === '↘' ? 'M4 4l8 8M4 12h8V4' : 'M4 12l8-8M4 4h8v8';
@@ -27,14 +29,14 @@ const sections = {
           </div>
         </div>
       </section>
-      <div class="ticker" aria-label="Curiosity, experimentation, iteration"><div>CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span> CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span></div></div>
-      <section id="beyond" class="section beyond reveal"><div class="section-heading"><div><p class="eyebrow">01 / BEYOND THE SCREEN</p><h2>A few things<br>that make me <em>me.</em></h2></div><p>There’s more to a person than a project list.<br>Here’s what fills the rest of my time.</p></div>
+      <div class="ticker" role="img" aria-label="Curiosity, experimentation, and a little trial and error"><div class="ticker-track" aria-hidden="true">${tickerGroup.repeat(2)}</div></div>
+      <section id="beyond" class="section beyond reveal"><div class="section-heading"><div><h2>My Interests!</h2></div><p>There’s more to a person than a project list.<br>Here’s what fills the rest of my time.</p></div>
       <div class="interest-grid">${[
-        ['01', '⌘', 'Things I build', '[Add your coding, engineering, or creative interests here.]', 'CURIOSITY → CREATION'],
-        ['02', '↗', 'Communities I’m part of', '[Add your clubs, teams, volunteering, and leadership roles here.]', 'BETTER, TOGETHER'],
-        ['03', '◎', 'Off the clock', '[Add the hobbies, sports, music, or little obsessions you love.]', 'JUST FOR THE JOY OF IT']
+        ['01', '⌘', 'Robotics & Engineering', 'As captain of Millburn Robotics, I lead an 11-person team and develop autonomous code for VEX competitions. At Columbia’s SHAPE program, I explored Arduino, CAD, and 3D printing while building a quadrupedal walking robot.', 'VEX · ARDUINO · CAD'],
+        ['02', '◎', 'Dance & Choreography', 'I lead and choreograph for Andaaz Dance Club and teach young dancers at Shehnaaz Dance Academy. I also founded Silver Steps Dance Crew, a volunteer group that brings monthly dance performances to local senior centers.', 'ANDAAZ · SHEHNAAZ · SILVER STEPS'],
+        ['03', '↗', 'Coding & Community', 'As president of Girls Who Code, I help bring weekly coding lessons to kids through the Boys and Girls Club. Through RISE, I developed a VEX IQ coding curriculum for young learners in Kenya. I also founded the MHS Science Research Club and its student mentorship program.', 'GIRLS WHO CODE · RISE · MHS']
       ].map(([n, icon, title, desc, tag]) => `<article class="interest-card"><div class="card-top"><span>${n}</span><span class="interest-icon">${icon}</span></div><h3>${title}</h3><p>${desc}</p><span class="micro">${tag}</span></article>`).join('')}</div></section>
-      <section class="section philosophy reveal"><span class="eyebrow">MY OPERATING PRINCIPLE</span><p>Ask a better question.<br>Build something <em>worth answering.</em></p><span class="asterisk">◎</span></section>`
+      `
   },
   research: { title: 'Research', content: researchContent },
   awards: { title: 'Awards', content: awardsContent }

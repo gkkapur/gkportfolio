@@ -15,7 +15,7 @@ npm run dev
 
 ## Personalize
 
-General page content and remaining placeholders live in `src/main.js`. The supplied portrait is in `public/images/guneet-kapur.webp`. Research content lives in `src/research.js`; original PDFs and the demonstration video are in `public/research`. The Awards section in `src/awards.js` presents 17 award entries from the supplied résumé and personal updates in a two-column grid across three categories, including the Congressional Award Silver Medal and STEM Star Award. Only the award details are included; the résumé itself is not published. The interests cards still await personalization.
+General page content lives in `src/main.js`, including three résumé-based interest cards covering Robotics & Engineering, Dance & Choreography, and Coding & Community. The supplied portrait is in `public/images/guneet-kapur.webp`. Research content lives in `src/research.js`; original PDFs and the demonstration video are in `public/research`. The Awards section in `src/awards.js` presents 17 award entries from the supplied résumé and personal updates in a two-column grid across three categories, including the Congressional Award Silver Medal and STEM Star Award. Only the relevant résumé details are included; the résumé itself is not published.
 
 Styles live in `src/style.css`. DM Sans is self-hosted through the pinned `@fontsource-variable/dm-sans` package, with system sans-serif fallbacks. Section and award headlines are bold. Award cards stack into a single column on mobile, and animations respect reduced-motion preferences. PDF support varies by browser; each reader includes a separate PDF link and a fallback message.
 
