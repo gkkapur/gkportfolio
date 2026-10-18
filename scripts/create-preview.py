@@ -3,11 +3,12 @@ from pathlib import Path
 import base64
 import json
 import re
+import mimetypes
 
 root = Path(__file__).resolve().parent.parent
 assets = {}
 for path in (root / 'public' / 'research').iterdir():
-    mime = 'application/pdf' if path.suffix == '.pdf' else 'video/mp4'
+    mime = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
     assets[path.name] = {'mime': mime, 'data': base64.b64encode(path.read_bytes()).decode()}
 
 bootstrap = 'const embeddedAssets = ' + json.dumps(assets) + ';\n'

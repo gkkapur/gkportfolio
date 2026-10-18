@@ -1,6 +1,6 @@
 # Personal portfolio
 
-A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, an uploaded demonstration video, six PDF readers, and links to open the original documents separately.
+A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, two TNJSF photos, an uploaded demonstration video, seven PDF readers, and links to open the original documents separately. JSHS recognition is linked from both Research and Awards.
 
 ## Development
 
