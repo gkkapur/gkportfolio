@@ -59,4 +59,10 @@ export const awardsContent = `
         <div class="honor-card-bottom"><time datetime="${awardDateTime(award.date)}">${award.date}</time>${award.file ? `<div class="honor-document-links"><a href="/research/${award.file}" target="_blank" rel="noopener">${award.link}</a>${award.relatedFile ? `<a href="/research/${award.relatedFile}" target="_blank" rel="noopener">${award.relatedLink}</a>` : ''}</div>` : '<span class="honor-ring" aria-hidden="true">◎</span>'}</div>
     </article>`).join('')}</div>
   </section>`).join('')}
-  <section class="section closing honors-closing reveal"><span class="eyebrow">Still curious. Still building.</span><h2>Every milestone opens<br>another possibility.</h2><a class="button" href="#research">Explore my research <span>↗</span></a></section>`;
+  <section id="contact" class="section closing honors-closing contact-box reveal" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Me!</h2>
+    <address class="contact-details">
+      <a href="tel:+19087391570"><span class="contact-label">Phone</span><span class="contact-value">908-739-1570</span></a>
+      <a href="mailto:guneet@kapurs.ws"><span class="contact-label">Email</span><span class="contact-value">guneet@kapurs.ws</span></a>
+    </address>
+  </section>`;

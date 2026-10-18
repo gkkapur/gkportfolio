@@ -60,7 +60,7 @@ document.querySelector('#app').innerHTML = `
     <nav aria-label="Main navigation">${Object.entries(sections).map(([id, section], i) => `<a href="#${id}" ${id === 'about' ? 'aria-current="location"' : ''}><span class="nav-number">0${i + 1}</span>${section.title}<span class="nav-dot"></span></a>`).join('')}</nav>
   </header>
   <main>${Object.entries(sections).map(([id, section]) => `<section id="${id}" class="portfolio-section" aria-labelledby="${id}-heading">${section.content}</section>`).join('')}</main>
-  <footer class="section"><a href="#about" class="wordmark" aria-label="Back to About">GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#about" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>
+  <footer class="section"><a href="#about" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>
 `.replace(/[↗↘]/g, arrowIcon);
 
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
