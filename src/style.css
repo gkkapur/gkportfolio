@@ -41,7 +41,7 @@
 @media(max-width:1000px){.project{grid-template-columns:80px minmax(0,1fr);gap:25px}.project-showcase{gap:23px}.recognition-grid{grid-template-columns:1fr}.recognition-grid h4{margin:12px 0}.abstract-copy h3{font-size:22px}}
 @media(max-width:700px){.hero h1{font-size:68px;letter-spacing:-3px}.page-intro .page-title{letter-spacing:-2px}.project{grid-template-columns:1fr;gap:20px}.project-number span{max-width:none}.project h2{font-size:29px;letter-spacing:-.8px}.project-showcase{grid-template-columns:1fr}.research-video{width:100%;max-width:350px;margin:0 auto}.project-summary{font-size:14px}.document-header{padding:18px;align-items:flex-start;flex-direction:column;gap:10px}.document-reader summary{padding:15px 18px}.document-reader object{height:480px}.mentor-note{padding:23px}.page-index{flex-wrap:wrap;row-gap:20px}}
 
-/* DM Sans, confident headlines, and alternating award chapters. */
+/* DM Sans, confident headlines, and award chapters. */
 .hero-copy{min-width:0}.philosophy p{font-weight:700}
 .inline-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.15em;flex-shrink:0}
 h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosophy em,.interest-card h3,.abstract-copy h3,.subsection-heading h3,.mentor-note h3,.ml-overview h3,.document-header h3{font-weight:700}
@@ -73,30 +73,22 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .honors-chapter-heading .eyebrow{color:var(--chapter-accent);margin:0 0 10px}
 .honors-chapter-heading h2{font-size:35px;letter-spacing:-1px;margin:0}
 .honors-chapter-heading>p{font-size:13px;line-height:1.8;color:var(--muted);max-width:280px;margin:0}
-.honors-timeline{position:relative;padding-bottom:12px}
-.honors-timeline::before{content:'';position:absolute;left:50%;top:46px;bottom:55px;width:1px;background:var(--chapter-border);transform:translateX(-50%)}
-.honor-entry{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);position:relative;margin-bottom:0;align-items:start}
-.honor-card{grid-column:1;grid-row:1;border:1px solid var(--chapter-border);background:var(--chapter-bg);padding:30px 32px;position:relative;box-shadow:0 5px 15px #38294e04;transition:transform .3s,box-shadow .3s;min-width:0}
-.honor-entry.right .honor-card{grid-column:3}
-.honor-card::after{content:'';position:absolute;top:46px;right:-36px;width:35px;height:1px;background:var(--chapter-border)}
-.honor-entry.right .honor-card::after{right:auto;left:-36px}
+.honor-card{display:flex;flex-direction:column;border:1px solid var(--chapter-border);background:var(--chapter-bg);padding:30px 32px;position:relative;box-shadow:0 5px 15px #38294e04;transition:transform .3s,box-shadow .3s;min-width:0}
 .honor-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #38294e0b}
 .honor-card-top{display:flex;gap:18px;justify-content:space-between;align-items:flex-start}
 .honor-organization{font-size:24px;font-weight:700;line-height:1.3;letter-spacing:-.4px;color:var(--ink);min-width:0;overflow-wrap:break-word}
 .honor-sequence{font-size:11px;color:var(--chapter-accent);border:1px solid var(--chapter-border);width:29px;height:29px;flex-shrink:0;border-radius:50%;display:grid;place-items:center}
 .honor-card h3{font-size:29px;line-height:1.22;letter-spacing:-.8px;margin:23px 0 18px;overflow-wrap:break-word}
 .honor-detail{font-size:12px;line-height:1.85;color:var(--muted);margin-bottom:20px}
-.honor-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-top:18px;border-top:1px solid var(--chapter-border);flex-wrap:wrap}
+.honor-card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;padding-top:18px;border-top:1px solid var(--chapter-border);flex-wrap:wrap}
 .honor-card-bottom time{font-size:11px;font-weight:500;color:#776681}
 .honor-card-bottom a{font-size:11px;text-decoration:underline;text-underline-offset:4px;line-height:1.6;color:#71518b}
 .honor-ring{font-size:21px;line-height:1;color:var(--chapter-accent)}
-.honor-node{grid-column:2;grid-row:1;justify-self:center;margin-top:38px;width:17px;height:17px;border:1px solid var(--chapter-accent);background:#fcfaff;border-radius:50%;display:grid;place-items:center;z-index:1}
-.honor-node span{width:5px;height:5px;background:var(--chapter-accent);border-radius:50%}
 .honors-closing{margin-top:35px;margin-bottom:65px;border:1px solid #eadff2}
 .honors-closing h2{font-size:42px;line-height:1.2}
-@media(min-width:1001px){.honor-entry:not(:first-child){margin-top:-35px}.honor-entry:nth-child(even){padding-top:38px}.honor-entry:last-child{padding-bottom:10px}}
-@media(max-width:1000px){.honors-chapters{gap:10px}.chapter-link{padding:20px 15px;font-size:12px;gap:10px}.honor-entry{grid-template-columns:minmax(0,1fr) 50px minmax(0,1fr);margin-bottom:24px}.honor-card{padding:25px 22px}.honor-card h3{font-size:25px}.honor-card::after{right:-25px;width:24px}.honor-entry.right .honor-card::after{left:-25px}.honors-chapter-heading h2{font-size:30px}}
-@media(max-width:700px){.hero h1,.page-intro .page-title{letter-spacing:-2.3px}.honors-chapters{grid-template-columns:1fr;gap:9px;margin-top:28px}.chapter-link{padding:18px 20px;font-size:13px}.honors-chapter{padding-top:24px;padding-bottom:20px}.honors-chapter-heading{display:block;padding-top:28px;margin-bottom:28px}.honors-chapter-heading>p{margin-top:16px;max-width:330px}.honors-chapter-heading h2{font-size:29px}.honors-timeline::before{left:8px;bottom:60px;top:44px}.honor-entry{grid-template-columns:34px minmax(0,1fr);margin-bottom:24px}.honor-card,.honor-entry.right .honor-card{grid-column:2;padding:25px 21px}.honor-node{grid-column:1;justify-self:start;margin-top:36px}.honor-card::after,.honor-entry.right .honor-card::after{right:auto;left:-26px;width:25px;top:44px}.honor-card h3{font-size:26px;letter-spacing:-.6px}.honor-card-top{gap:10px}.honor-organization{font-size:12px}.honor-sequence{width:25px;height:25px;font-size:10px}.honors-closing{margin-bottom:40px}.honors-closing h2{font-size:31px}.research-award-card .document-header{padding:23px 21px}.research-award-card .document-header h3{font-size:22px}.research-award-card .document-link{font-size:12px}}
+
+@media(max-width:1000px){.honors-chapters{gap:10px}.chapter-link{padding:20px 15px;font-size:12px;gap:10px}.honor-card{padding:25px 22px}.honor-card h3{font-size:25px}.honors-chapter-heading h2{font-size:30px}}
+@media(max-width:700px){.hero h1,.page-intro .page-title{letter-spacing:-2.3px}.honors-chapters{grid-template-columns:1fr;gap:9px;margin-top:28px}.chapter-link{padding:18px 20px;font-size:13px}.honors-chapter{padding-top:24px;padding-bottom:20px}.honors-chapter-heading{display:block;padding-top:28px;margin-bottom:28px}.honors-chapter-heading>p{margin-top:16px;max-width:330px}.honors-chapter-heading h2{font-size:29px}.honor-card h3{font-size:26px;letter-spacing:-.6px}.honor-card-top{gap:10px}.honor-organization{font-size:12px}.honor-sequence{width:25px;height:25px;font-size:10px}.honors-closing{margin-bottom:40px}.honors-closing h2{font-size:31px}.research-award-card .document-header{padding:23px 21px}.research-award-card .document-header h3{font-size:22px}.research-award-card .document-link{font-size:12px}}
 @media(max-width:700px){.hero h1{font-size:clamp(48px,14vw,68px)}}
 
 /* One continuous page with section navigation always within reach. */
@@ -145,3 +137,9 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .hero .portrait-frame{padding:10px}
 .portrait-image{display:block;width:100%;height:auto}
 @media(max-width:700px){.hero .intro{font-size:15px}.hero .portrait-wrap{max-width:380px;padding:0 12px;justify-self:center}.hero .portrait-frame{padding:8px}.hero-topics{font-size:11px}}
+
+/* Compact award cards: two per row, one per row on small screens. */
+.honors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.honor-card{height:100%}
+.team-label{display:inline-block;font-size:16px;font-weight:500;letter-spacing:0;line-height:1.5;vertical-align:middle}
+@media(max-width:700px){.honors-grid{grid-template-columns:1fr;gap:16px}.honor-card{padding:25px 21px}.team-label{font-size:14px}}

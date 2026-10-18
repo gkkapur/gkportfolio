@@ -1,6 +1,6 @@
 # Personal portfolio
 
-A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, three TNJSF photos, an uploaded demonstration video, eight PDF readers, and links to open the original documents separately. JSHS recognition and the TNJSF judging list are linked from both Research and Awards. Robotics awards are listed newest first.
+A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, three TNJSF photos, an uploaded demonstration video, eight PDF readers, and links to open the original documents separately. JSHS recognition and the TNJSF judging list are linked from both Research and Awards. Robotics awards are grouped newest first, including the 2026 Top 120 result and 2025 attendance at the VEX World Championships for Team 7405M. Dates supplied only as years remain year-only.
 
 ## Development
 
@@ -15,9 +15,9 @@ npm run dev
 
 ## Personalize
 
-General page content and remaining placeholders live in `src/main.js`. The supplied portrait is in `public/images/guneet-kapur.webp`. Research content lives in `src/research.js`; original PDFs and the demonstration video are in `public/research`. The Awards section in `src/awards.js` presents 15 distinctions from the supplied résumé in alternating cards across three categories. Only the award details are included; the résumé itself is not published. The interests cards still await personalization.
+General page content and remaining placeholders live in `src/main.js`. The supplied portrait is in `public/images/guneet-kapur.webp`. Research content lives in `src/research.js`; original PDFs and the demonstration video are in `public/research`. The Awards section in `src/awards.js` presents 17 award entries from the supplied résumé and personal updates in a two-column grid across three categories, including the Congressional Award Silver Medal and STEM Star Award. Only the award details are included; the résumé itself is not published. The interests cards still await personalization.
 
-Styles live in `src/style.css`. DM Sans is self-hosted through the pinned `@fontsource-variable/dm-sans` package, with system sans-serif fallbacks. Section and award headlines are bold. Alternating award cards stack into a single column on mobile, and animations respect reduced-motion preferences. PDF support varies by browser; each reader includes a separate PDF link and a fallback message.
+Styles live in `src/style.css`. DM Sans is self-hosted through the pinned `@fontsource-variable/dm-sans` package, with system sans-serif fallbacks. Section and award headlines are bold. Award cards stack into a single column on mobile, and animations respect reduced-motion preferences. PDF support varies by browser; each reader includes a separate PDF link and a fallback message.
 
 ## Downloadable preview
 
