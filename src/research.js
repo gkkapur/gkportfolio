@@ -1,14 +1,20 @@
 const asset = name => `/research/${name}`;
 
-function documentReader(title, file, description, open = false, options = {}) {
-  const { award = false, linkLabel = 'Open PDF ↗' } = options;
-  const link = `<a class="document-link" href="${asset(file)}" target="_blank" rel="noopener">${linkLabel}</a>`;
-  return `<article class="document-card${award ? ' research-award-card' : ''}">
-    <div class="document-header"><div><h3>${title}</h3>${award ? link : ''}<p>${description}</p></div>${award ? '' : link}</div>
-    <details class="document-reader" ${open ? 'open' : ''}><summary>Read here <span>Expand / collapse ↓</span></summary>
+function pdfReader(title, file, open = false, label = 'Read here') {
+  return `<details class="document-reader" ${open ? 'open' : ''}><summary>${label} <span>Expand / collapse ↓</span></summary>
       <object data="${asset(file)}" type="application/pdf" aria-label="${title}"><p>This browser doesn’t support inline PDF reading. <a href="${asset(file)}" target="_blank" rel="noopener">Open the PDF separately ↗</a></p></object>
       <p class="reader-note">Scroll inside the document to read. You can also open the PDF separately above.</p>
-    </details>
+    </details>`;
+}
+
+function documentReader(title, file, description, open = false, options = {}) {
+  const { award = false, linkLabel = 'Open PDF ↗', relatedDocument } = options;
+  const link = `<a class="document-link" href="${asset(file)}" target="_blank" rel="noopener">${linkLabel}</a>`;
+  const relatedLink = relatedDocument ? `<a class="document-link related-document-link" href="${asset(relatedDocument.file)}" target="_blank" rel="noopener">View the ${relatedDocument.title} ↗</a>` : '';
+  return `<article class="document-card${award ? ' research-award-card' : ''}">
+    <div class="document-header"><div><h3>${title}</h3>${award ? link : ''}${relatedLink}<p>${description}</p></div>${award ? '' : link}</div>
+    ${pdfReader(title, file, open)}
+    ${relatedDocument ? pdfReader(relatedDocument.title, relatedDocument.file, false, 'Read the judging list here') : ''}
   </article>`;
 }
 
@@ -50,7 +56,7 @@ export const researchContent = `
         ${documentReader('Project abstract', 'robotic-hand-abstract.pdf', 'The original overview of the robotic hand project.')}
       </div>
       <div class="research-awards"><div class="subsection-heading"><span class="eyebrow">Project recognition</span><h3>Awards & distinctions</h3></div>
-        ${documentReader('TNJSF — First Place in Engineering & ISEF Grand Trip Finalist', 'tnjsf-certificate.pdf', 'Terra North Jersey STEM Fair · 2026', false, { award: true, linkLabel: 'Click here for the Award Certificate.' })}
+        ${documentReader('TNJSF — First Place in Engineering & ISEF Grand Trip Contender', 'tnjsf-certificate.pdf', 'Terra North Jersey STEM Fair · 2026', false, { award: true, linkLabel: 'Click here for the Award Certificate.', relatedDocument: { title: 'ISEF Grand Prize Judging List', file: 'tnjsf-judging.pdf' } })}
         <p class="official-awards-link"><a href="https://tnjsf.org/cgi-bin/AwardsList.pl" target="_blank" rel="noopener">View the official TNJSF awards list ↗</a></p>
         ${documentReader('Robofest — First Place Senior Exhibition and Advancement to the World Championships', 'robofest-award.pdf', 'Robotic replication of cultural dance hand gestures · 2026', false, { award: true, linkLabel: 'Click here for Trophy and Certificate.' })}
         ${documentReader('Scholastic Art & Writing Awards — Silver Key', 'silver-key-certificate.pdf', '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art · 2026', false, { award: true, linkLabel: 'Click here for the Silver Key Certificate.' })}

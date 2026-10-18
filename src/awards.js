@@ -5,7 +5,7 @@ export const awardGroups = [
     id: 'science', title: 'Science & research', number: '01', color: 'pink',
     description: 'Exploring ideas, asking questions, and sharing what I discover.',
     awards: [
-      { organization: 'Terra North Jersey STEM Fair', title: 'First Place in Engineering & ISEF Grand Trip Finalist', date: 'March 2026', detail: 'A Motion-Capture Driven Humanoid Hand for Dance and Cultural Preservation.', file: 'tnjsf-certificate.pdf', link: 'View award certificate ↗' },
+      { organization: 'Terra North Jersey STEM Fair', title: 'TNJSF — First Place in Engineering & ISEF Grand Trip Contender', date: 'March 2026', detail: 'A Motion-Capture Driven Humanoid Hand for Dance and Cultural Preservation.', file: 'tnjsf-certificate.pdf', link: 'View award certificate ↗', relatedFile: 'tnjsf-judging.pdf', relatedLink: 'View ISEF Grand Prize Judging List ↗' },
       { organization: 'JSHS', title: 'Student Recognition Award & Abstract Publication', date: 'August 2026', detail: '2025–2026 Student Research Recognition Program · $550 Entry Award and abstract publication.', file: 'jshs-recognition.pdf', link: 'View JSHS recognition notification ↗' },
       { organization: 'Robofest Exhibition', title: 'First Place & Advancement to the World Championships', date: 'March 2026', detail: 'Senior Exhibition · Robotic replication of cultural dance hand gestures.', file: 'robofest-award.pdf', link: 'View trophy & certificate ↗' },
       { organization: 'Scholastic Art & Writing Awards', title: 'Silver Key', date: 'January 2026', detail: '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art.', file: 'silver-key-certificate.pdf', link: 'View Silver Key certificate ↗' },
@@ -17,13 +17,13 @@ export const awardGroups = [
     description: 'Building, iterating, and learning through competition.',
     awards: [
       { organization: 'VEX Robotics V5 High Stakes · NJ State Championship', title: 'Second Place', date: 'March 2026' },
-      { organization: 'Toshiba ExploraVision', title: 'Honorable Mention', date: 'May 2025' },
-      { organization: 'Cedar Grove VEX Robotics Competition', title: 'First Place', date: 'January 2026' },
-      { organization: 'South Brunswick Robotics Competitions', title: 'First Place', date: 'February 2025' },
       { organization: 'Seton Hall University VEX Robotics Competition', title: 'First Place & Innovate Award', date: 'February 2026' },
-      { organization: 'Millburn Robotics Competitions', title: 'Semifinalist', date: 'December 2025' },
-      { organization: 'NJIT Robotics Competition', title: 'Semifinalist', date: 'March 2024' },
-      { organization: 'Cherry Hill VEXTRAVAGANZA', title: 'Finalist & Excellence Award', date: 'December 2025' }
+      { organization: 'Cedar Grove VEX Robotics Competition', title: 'First Place', date: 'January 2026' },
+      { organization: 'Millburn VEX Robotics Competition', title: 'Semifinalist', date: 'December 2025' },
+      { organization: 'Cherry Hill VEXTRAVAGANZA', title: 'Finalist & Excellence Award', date: 'December 2025' },
+      { organization: 'Toshiba ExploraVision', title: 'Honorable Mention', date: 'May 2025' },
+      { organization: 'South Brunswick VEX Robotics Competition', title: 'First Place', date: 'February 2025' },
+      { organization: 'NJIT VEX Robotics Competition', title: 'Semifinalist', date: 'March 2024' }
     ]
   },
   {
@@ -49,7 +49,7 @@ export const awardsContent = `
       <span class="honor-node" aria-hidden="true"><span></span></span>
       <div class="honor-card"><div class="honor-card-top"><span class="honor-organization">${award.organization}</span><span class="honor-sequence" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>
         <h3>${award.title}</h3>${award.detail ? `<p class="honor-detail">${award.detail}</p>` : ''}
-        <div class="honor-card-bottom"><time datetime="${new Date(award.date).getFullYear()}-${String(new Date(award.date).getMonth() + 1).padStart(2, '0')}">${award.date}</time>${award.file ? `<a href="/research/${award.file}" target="_blank" rel="noopener">${award.link}</a>` : '<span class="honor-ring" aria-hidden="true">◎</span>'}</div>
+        <div class="honor-card-bottom"><time datetime="${new Date(award.date).getFullYear()}-${String(new Date(award.date).getMonth() + 1).padStart(2, '0')}">${award.date}</time>${award.file ? `<div class="honor-document-links"><a href="/research/${award.file}" target="_blank" rel="noopener">${award.link}</a>${award.relatedFile ? `<a href="/research/${award.relatedFile}" target="_blank" rel="noopener">${award.relatedLink}</a>` : ''}</div>` : '<span class="honor-ring" aria-hidden="true">◎</span>'}</div>
       </div>
     </article>`).join('')}</div>
   </section>`).join('')}

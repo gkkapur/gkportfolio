@@ -82,7 +82,7 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .honor-entry.right .honor-card::after{right:auto;left:-36px}
 .honor-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #38294e0b}
 .honor-card-top{display:flex;gap:18px;justify-content:space-between;align-items:flex-start}
-.honor-organization{font-size:12px;font-weight:500;line-height:1.7;color:#776681;max-width:290px}
+.honor-organization{font-size:24px;font-weight:700;line-height:1.3;letter-spacing:-.4px;color:var(--ink);min-width:0;overflow-wrap:break-word}
 .honor-sequence{font-size:11px;color:var(--chapter-accent);border:1px solid var(--chapter-border);width:29px;height:29px;flex-shrink:0;border-radius:50%;display:grid;place-items:center}
 .honor-card h3{font-size:29px;line-height:1.22;letter-spacing:-.8px;margin:23px 0 18px;overflow-wrap:break-word}
 .honor-detail{font-size:12px;line-height:1.85;color:var(--muted);margin-bottom:20px}
@@ -102,7 +102,7 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 /* One continuous page with section navigation always within reach. */
 .site-header{position:sticky;top:0;z-index:20;background:#fcfaffed;backdrop-filter:blur(14px)}
 .portfolio-section{display:flow-root}
-.portfolio-section + .portfolio-section{border-top:3px solid #d6c4e5}
+.portfolio-section + .portfolio-section{border-top:5px solid #d6c4e5}
 @media(max-width:700px){html{scroll-padding-top:96px}}
 
 /* Research snapshots, readable topic labels, and concise project questions. */
@@ -133,3 +133,6 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 .mentor-note a{color:#76518f;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:700px){.site-header{gap:12px}.site-header .wordmark{font-size:18px;letter-spacing:-.6px}.site-header nav{gap:10px}.site-header nav a{gap:4px}}
 @media(max-width:380px){.site-header{padding-left:16px;padding-right:16px;gap:10px}.site-header .wordmark{font-size:17px}.site-header nav{gap:8px}.site-header nav a{gap:3px}}
+.honor-document-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.research-award-card .related-document-link{display:block}
+@media(max-width:700px){.honor-organization{font-size:21px}}
