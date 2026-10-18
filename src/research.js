@@ -15,8 +15,8 @@ function documentReader(title, file, description, open = false, options = {}) {
 export const researchContent = `
   <section class="section page-intro reveal">
     <p class="eyebrow"><span class="status-dot"></span> Research & exploration</p>
-    <h2 id="research-heading" class="page-title">Questions worth<br><span class="serif">chasing.</span></h2>
-    <p class="intro">From preserving the language of dance to finding patterns in data — two projects that brought my curiosity into practice.</p>
+    <h2 id="research-heading" class="page-title">My Research<br><span class="serif">Journey</span></h2>
+    <p class="intro">From combining my passions in dance and robotics to finding patterns in data with machine learning. The two projects that captivated my interests.</p>
     <div class="page-index"><a href="#project-01">01 — Robotics & culture ↓</a><a href="#project-02">02 — Machine learning ↓</a></div>
   </section>
 

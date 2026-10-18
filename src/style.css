@@ -102,5 +102,5 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 /* One continuous page with section navigation always within reach. */
 .site-header{position:sticky;top:0;z-index:20;background:#fcfaffed;backdrop-filter:blur(14px)}
 .portfolio-section{display:flow-root}
-.portfolio-section + .portfolio-section{border-top:1px solid var(--line)}
+.portfolio-section + .portfolio-section{border-top:3px solid #d6c4e5}
 @media(max-width:700px){html{scroll-padding-top:96px}}
