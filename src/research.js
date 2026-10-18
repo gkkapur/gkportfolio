@@ -56,7 +56,7 @@ export const researchContent = `
         ${documentReader('Project abstract', 'robotic-hand-abstract.pdf', 'The original overview of the robotic hand project.')}
       </div>
       <div class="research-awards"><div class="subsection-heading"><span class="eyebrow">Project recognition</span><h3>Awards & distinctions</h3></div>
-        ${documentReader('TNJSF — First Place in Engineering & ISEF Grand Trip Contender', 'tnjsf-certificate.pdf', 'Terra North Jersey STEM Fair · 2026', false, { award: true, linkLabel: 'Click here for the Award Certificate.', relatedDocument: { title: 'ISEF Grand Prize Judging List', file: 'tnjsf-judging.pdf' } })}
+        ${documentReader('TNJSF — First Place in Engineering & ISEF Grand Trip Contender', 'tnjsf-certificate.pdf', 'Terra North Jersey STEM Fair · 2026', false, { award: true, linkLabel: 'Click here for the Award Certificate.', relatedDocument: { title: 'New Jersey ISEF Grand Trip Contender List', file: 'tnjsf-judging.pdf' } })}
         <p class="official-awards-link"><a href="https://tnjsf.org/cgi-bin/AwardsList.pl" target="_blank" rel="noopener">View the official TNJSF awards list ↗</a></p>
         ${documentReader('Robofest — First Place Senior Exhibition and Advancement to the World Championships', 'robofest-award.pdf', 'Robotic replication of cultural dance hand gestures · 2026', false, { award: true, linkLabel: 'Click here for Trophy and Certificate.' })}
         ${documentReader('Scholastic Art & Writing Awards — Silver Key', 'silver-key-certificate.pdf', '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art · 2026', false, { award: true, linkLabel: 'Click here for the Silver Key Certificate.' })}
