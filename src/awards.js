@@ -46,9 +46,8 @@ function awardDateTime(date) {
 
 export const awardsContent = `
   <section class="section page-intro honors-intro reveal">
-    <p class="eyebrow"><span class="status-dot"></span> Awards & distinctions · 2024–2026</p>
-    <h2 id="awards-heading" class="page-title">Milestones<br><span class="serif">along the way.</span></h2>
-    <p class="intro">From the research lab to the robotics field and the dance floor — moments of recognition across the things I love.</p>
+    <h2 id="awards-heading" class="page-title">My Awards &amp; Distinctions<br><span class="serif">Over The Years</span></h2>
+    <p class="intro">Moments of recognition across the things I love to do</p>
     <nav class="honors-chapters" aria-label="Award categories">${awardGroups.map(group => `<a class="chapter-link ${group.color}" href="#${group.id}"><span class="chapter-number">${group.number}</span><span>${group.title}</span><span aria-hidden="true">↘</span></a>`).join('')}</nav>
   </section>
   ${awardGroups.map(group => `<section id="${group.id}" class="section honors-chapter ${group.color}" aria-labelledby="${group.id}-heading">
@@ -60,7 +59,7 @@ export const awardsContent = `
     </article>`).join('')}</div>
   </section>`).join('')}
   <section id="contact" class="section closing honors-closing contact-box reveal" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Contact Me!</h2>
+    <div class="contact-copy"><h2 id="contact-heading">Contact Me!</h2><p class="contact-intro">Feel free to reach out to talk, I am open to discussions with anyone!</p></div>
     <address class="contact-details">
       <a href="tel:+19087391570"><span class="contact-label">Phone</span><span class="contact-value">908-739-1570</span></a>
       <a href="mailto:guneet@kapurs.ws"><span class="contact-label">Email</span><span class="contact-value">guneet@kapurs.ws</span></a>
