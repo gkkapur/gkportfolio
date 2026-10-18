@@ -24,7 +24,6 @@ export const researchContent = `
     <div class="research-intro-layout">
       <div class="research-intro-copy">
         <h2 id="research-heading" class="page-title">My Research<br><span class="serif">Journey</span></h2>
-        <p class="intro">From combining my passions in dance and robotics to finding patterns in data with machine learning. The two projects that captivated my interests.</p>
         <div class="page-index"><a href="#project-01">01 — Robotics & culture ↓</a><a href="#project-02">02 — Machine learning ↓</a></div>
       </div>
       <div class="research-photos" aria-label="Photos from the Terra North Jersey STEM Fair">

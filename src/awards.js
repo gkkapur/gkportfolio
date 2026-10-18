@@ -47,7 +47,6 @@ function awardDateTime(date) {
 export const awardsContent = `
   <section class="section page-intro honors-intro reveal">
     <h2 id="awards-heading" class="page-title">My Awards &amp; Distinctions<br><span class="serif">Over The Years</span></h2>
-    <p class="intro">Moments of recognition across the things I love to do</p>
     <nav class="honors-chapters" aria-label="Award categories">${awardGroups.map(group => `<a class="chapter-link ${group.color}" href="#${group.id}"><span class="chapter-number">${group.number}</span><span>${group.title}</span><span aria-hidden="true">↘</span></a>`).join('')}</nav>
   </section>
   ${awardGroups.map(group => `<section id="${group.id}" class="section honors-chapter ${group.color}" aria-labelledby="${group.id}-heading">

@@ -30,7 +30,7 @@ const sections = {
         </div>
       </section>
       <div class="ticker" role="img" aria-label="Curiosity, experimentation, and a little trial and error"><div class="ticker-track" aria-hidden="true">${tickerGroup.repeat(2)}</div></div>
-      <section id="beyond" class="section beyond reveal"><div class="section-heading"><div><h2>My Interests!</h2></div><p>There’s more to a person than a project list.<br>Here’s what fills the rest of my time.</p></div>
+      <section id="beyond" class="section beyond reveal"><div class="section-heading"><div><h2>My Interests!</h2></div></div>
       <div class="interest-grid">${[
         ['01', '⌘', 'Robotics & Engineering', 'As captain of Millburn Robotics, I lead an 11-person team and develop autonomous code for VEX competitions. At Columbia’s SHAPE program, I explored Arduino, CAD, and 3D printing while building a quadrupedal walking robot.', 'VEX · ARDUINO · CAD'],
         ['02', '◎', 'Dance & Choreography', 'I lead and choreograph for Andaaz Dance Club and teach young dancers at Shehnaaz Dance Academy. I also founded Silver Steps Dance Crew, a volunteer group that brings monthly dance performances to local senior centers.', 'ANDAAZ · SHEHNAAZ · SILVER STEPS'],
