@@ -58,9 +58,8 @@ document.title = 'Guneet Kapur — Personal Portfolio';
 document.querySelector('#app').innerHTML = `
   <div class="scroll-progress"></div>
   <header class="site-header">
-    <a href="#about" class="wordmark" aria-label="Back to About">GK<span>◎</span></a>
+    <a href="#about" class="wordmark" aria-label="Guneet Kapur — back to About">Guneet Kapur</a>
     <nav aria-label="Main navigation">${Object.entries(sections).map(([id, section], i) => `<a href="#${id}" ${id === 'about' ? 'aria-current="location"' : ''}><span class="nav-number">0${i + 1}</span>${section.title}<span class="nav-dot"></span></a>`).join('')}</nav>
-    <span class="header-note">PERSONAL PORTFOLIO <span>↗</span></span>
   </header>
   <main>${Object.entries(sections).map(([id, section]) => `<section id="${id}" class="portfolio-section" aria-labelledby="${id}-heading">${section.content}</section>`).join('')}</main>
   <footer class="section"><a href="#about" class="wordmark" aria-label="Back to About">GK<span>◎</span></a><p>A curious mind. An open road.</p><a href="#about" class="back-top">BACK TO TOP ↑</a><span class="footer-small">GUNEET KAPUR · PERSONAL PORTFOLIO</span></footer>
