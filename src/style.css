@@ -139,10 +139,13 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 @media(max-width:700px){.hero .intro{font-size:15px}.hero .portrait-wrap{max-width:380px;padding:0 12px;justify-self:center}.hero .portrait-frame{padding:8px}.hero-topics{font-size:11px}}
 
 /* Compact award cards: two per row, one per row on small screens. */
-.honors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.honor-card{height:100%}
+.honors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.honor-card{height:100%;padding:22px 24px}
+.honor-card h3{margin:16px 0 12px}
+.honor-detail{margin:0 0 14px;line-height:1.7}
+.honor-card-bottom{padding-top:12px;gap:10px}
 .team-label{display:inline-block;font-size:16px;font-weight:500;letter-spacing:0;line-height:1.5;vertical-align:middle}
-@media(max-width:700px){.honors-grid{grid-template-columns:1fr;gap:16px}.honor-card{padding:25px 21px}.team-label{font-size:14px}}
+@media(max-width:700px){.honors-grid{grid-template-columns:1fr;gap:10px}.honor-card{padding:20px}.team-label{font-size:14px}}
 
 /* Contact details replace the closing research callout. */
 .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
