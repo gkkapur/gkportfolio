@@ -4,12 +4,12 @@ export const awardGroups = [
   {
     id: 'science', title: 'Science & research', number: '01', color: 'pink',
     awards: [
-      { organization: 'National Merit Scholarship Program', title: 'Letter of Commendation', date: '2026', detail: 'For outstanding performance on the 2025 PSAT/NMSQT.', file: 'national-merit-commendation.pdf', link: 'View Letter of Commendation ↗' },
       { organization: 'Terra North Jersey STEM Fair', title: 'TNJSF — First Place in Engineering & ISEF Grand Trip Contender', date: 'March 2026', detail: 'A Motion-Capture Driven Humanoid Hand for Dance and Cultural Preservation.', file: 'tnjsf-certificate.pdf', link: 'View award certificate ↗', relatedFile: 'tnjsf-judging.pdf', relatedLink: 'View the New Jersey ISEF Grand Trip Contender List ↗' },
       { organization: 'JSHS', title: 'Student Recognition Award & Abstract Publication', date: 'August 2026', detail: '2025–2026 Student Research Recognition Program · $550 Entry Award and abstract publication.', file: 'jshs-recognition.pdf', link: 'View JSHS recognition notification ↗' },
       { organization: 'Robofest Exhibition', title: 'First Place & Advancement to the World Championships', date: 'March 2026', detail: 'Senior Exhibition · Robotic replication of cultural dance hand gestures.', file: 'robofest-award.pdf', link: 'View trophy & certificate ↗' },
       { organization: 'Scholastic Art & Writing Awards', title: 'Silver Key', date: 'January 2026', detail: '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art.', file: 'silver-key-certificate.pdf', link: 'View Silver Key certificate ↗' },
-      { organization: 'New Jersey Science League', title: 'Top 6 in Honors Chemistry', date: 'January 2026', file: 'nj-science-league-2026.pdf', link: 'View medal & certificate ↗' }
+      { organization: 'New Jersey Science League', title: 'Top 6 in Honors Chemistry', date: 'January 2026', file: 'nj-science-league-2026.pdf', link: 'View medal & certificate ↗' },
+      { organization: 'National Merit Scholarship Program', title: 'Letter of Commendation', date: '2026', detail: 'For outstanding performance on the 2025 PSAT/NMSQT.', file: 'national-merit-commendation.pdf', link: 'View Letter of Commendation ↗' }
     ]
   },
   {
