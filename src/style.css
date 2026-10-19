@@ -177,7 +177,3 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 
 /* Casual-save deterrents; the original files remain accessible to browsers. */
 img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
-
-/* Equal-width copies keep the ticker seamless at the animation boundary. */
-.ticker > .ticker-track{gap:0;animation:marquee 60s linear infinite}
-.ticker-group{display:flex;flex:0 0 auto;align-items:center;justify-content:space-around;gap:44px;min-width:100vw;padding-right:44px}

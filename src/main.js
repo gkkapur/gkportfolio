@@ -4,8 +4,6 @@ import { researchContent } from './research.js';
 import { awardsContent } from './awards.js';
 
 const portraitUrl = '/images/guneet-kapur.webp';
-const tickerItems = 'CURIOSITY <span>◎</span> EXPERIMENTATION <span>◎</span> A LITTLE TRIAL & ERROR <span>◎</span>';
-const tickerGroup = `<div class="ticker-group">${tickerItems.repeat(2)}</div>`;
 
 function arrowIcon(direction) {
   const path = direction === '↘' ? 'M4 4l8 8M4 12h8V4' : 'M4 12l8-8M4 4h8v8';
@@ -20,7 +18,7 @@ const sections = {
         <div class="hero-copy">
           <p class="hero-topics">Robotics <span aria-hidden="true">·</span> Machine Learning <span aria-hidden="true">·</span> Dance <span aria-hidden="true">·</span> Creativity</p>
           <h1 id="about-heading">Guneet<br><span class="serif">Kapur</span></h1>
-          <p class="intro">Hi, I’m Guneet! I’m a high school senior interested in computer science, robotics, and all things creative. My passion lies in exploring how dance and technology intersect and <strong>finding connections between disciplines people don’t often think to bring together</strong>. I’m drawn to projects that combine my interests in unexpected ways, and I want to build thoughtful, useful things that make a difference to the people and communities around me.</p>
+          <p class="intro">Hi, I’m Guneet! I’m a high school senior interested in computer science, robotics, and all things creative. My passion lies in exploring how dance and technology intersect and <strong>finding connections between disciplines people don’t often think to bring together</strong>. I want to build thoughtful, useful things that make a difference to the people and communities around me.</p>
           <a class="scroll-link" href="#beyond">SCROLL TO GET TO KNOW ME <span>↓</span></a>
         </div>
         <div class="portrait-wrap">
@@ -29,7 +27,6 @@ const sections = {
           </div>
         </div>
       </section>
-      <div class="ticker" role="img" aria-label="Curiosity, experimentation, and a little trial and error"><div class="ticker-track" aria-hidden="true">${tickerGroup.repeat(2)}</div></div>
       <section id="beyond" class="section beyond reveal"><div class="section-heading"><div><h2>My Interests!</h2></div></div>
       <div class="interest-grid">${[
         ['01', '⌘', 'Robotics & Engineering', 'As captain of Millburn Robotics, I lead an 11-person team and develop autonomous code for VEX competitions. At Columbia’s SHAPE program, I explored Arduino, CAD, and 3D printing while building a quadrupedal walking robot.', 'VEX · ARDUINO · CAD'],
