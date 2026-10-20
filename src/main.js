@@ -2,9 +2,7 @@ import '@fontsource-variable/dm-sans';
 import './style.css';
 import { researchContent } from './research.js';
 import { awardsContent } from './awards.js';
-import { inject } from "@vercel/analytics/next"
 
-inject();
 const portraitUrl = '/images/guneet-kapur.webp';
 
 function arrowIcon(direction) {
