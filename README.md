@@ -1,6 +1,6 @@
 # Personal portfolio
 
-A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, three TNJSF photos, an uploaded demonstration video, eight PDF readers, and links to open the original documents separately. JSHS recognition and the TNJSF judging list are linked from both Research and Awards. Robotics awards are grouped newest first, including the 2026 Top 120 result and 2025 attendance at the VEX World Championships for Team 7405M. Dates supplied only as years remain year-only.
+A single-page personal portfolio with About, Research, and Awards sections. Sticky navigation scrolls to each section and highlights the current section as you scroll. Research includes two projects, three TNJSF photos, an uploaded demonstration video, eight PDF readers, and links to open the original documents separately. JSHS recognition and the TNJSF judging list are linked from both Research and Awards. Robotics awards are grouped newest first, including the 2026 Top 160 result and 2025 attendance at the VEX World Championships for Team 7405M. Dates supplied only as years remain year-only.
 
 ## Development
 
