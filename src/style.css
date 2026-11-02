@@ -181,4 +181,8 @@ h1,h2,h3,h4,.hero h1,.page-intro .page-title,.project h2,.serif,h2 em,.philosoph
 /* Casual-save deterrents; the original files remain accessible to browsers. */
 img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
 
-.interest-card p a{text-decoration:underline;text-underline-offset:3px}
+.interest-card h3{font-size:22px}
+.interest-card p{font-size:15px;line-height:1.8}
+.interest-card .micro{font-size:10px;line-height:1.6}
+.interest-card p a{color:#7342a4;text-decoration:underline;text-underline-offset:3px}
+.interest-card p a:hover{color:#512677}
