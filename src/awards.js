@@ -4,11 +4,11 @@ export const awardGroups = [
   {
     id: 'science', title: 'Science & research', number: '01', color: 'pink',
     awards: [
-      { organization: 'Terra North Jersey STEM Fair', title: 'TNJSF — First Place in Engineering & ISEF Grand Trip Contender', date: 'March 2026', detail: 'A Motion-Capture Driven Humanoid Hand for Dance and Cultural Preservation.', file: 'tnjsf-certificate.pdf', link: 'View award certificate ↗', relatedFile: 'tnjsf-judging.pdf', relatedLink: 'View the New Jersey ISEF Grand Trip Contender List ↗' },
+      { organization: 'Terra North Jersey STEM Fair', title: 'TNJSF — First Place in Engineering & ISEF Grand Trip Contender', date: 'March 2026', subtitle: 'Selected to compete after two rounds of interviews: first through my school, then through TNJSF.', detail: 'A Motion-Capture Driven Humanoid Hand for Dance and Cultural Preservation.', file: 'tnjsf-certificate.pdf', link: 'View award certificate ↗', relatedFile: 'tnjsf-judging.pdf', relatedLink: 'View the New Jersey ISEF Grand Trip Contender List ↗' },
       { organization: 'JSHS', title: 'Student Recognition Award & Abstract Publication', date: 'August 2026', detail: '2025–2026 Student Research Recognition Program · $550 Entry Award and abstract publication.', file: 'jshs-recognition.pdf', link: 'View JSHS recognition notification ↗' },
       { organization: 'Robofest Exhibition', title: 'First Place & Advancement to the World Championships', date: 'March 2026', detail: 'Senior Exhibition · Robotic replication of cultural dance hand gestures.', file: 'robofest-award.pdf', link: 'View trophy & certificate ↗' },
       { organization: 'Scholastic Art & Writing Awards', title: 'Silver Key', date: 'January 2026', detail: '“Preserving Traditions through Robotics” · Conceptual, Installation & Participatory Art.', file: 'silver-key-certificate.pdf', link: 'View Silver Key certificate ↗' },
-      { organization: 'New Jersey Science League', title: 'Top 6 in Honors Chemistry', date: 'January 2026', file: 'nj-science-league-2026.pdf', link: 'View medal & certificate ↗' },
+      { organization: 'New Jersey Science League', title: 'Top 6 in Chemistry 1', date: 'January 2026', subtitle: '6th in the state', file: 'nj-science-league-2026.pdf', link: 'View medal & certificate ↗' },
       { organization: 'National Merit Scholarship Program', title: 'Letter of Commendation', date: '2026', detail: 'For outstanding performance on the 2025 PSAT/NMSQT.', file: 'national-merit-commendation.pdf', link: 'View Letter of Commendation ↗' }
     ]
   },
@@ -59,7 +59,7 @@ export const awardsContent = `
     <div class="honors-chapter-heading reveal"><div><p class="eyebrow">Chapter ${group.number}</p><h2 id="${group.id}-heading">${group.title}${group.teamLabel ? ` <span class="team-label">(${group.teamLabel})</span>` : ''}</h2></div></div>
     <div class="honors-grid">${group.awards.map((award, i) => `<article class="honor-card reveal">
       <div class="honor-card-top"><span class="honor-organization">${award.organization}</span><span class="honor-sequence" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>
-        <h3>${award.title}</h3>${award.detail ? `<p class="honor-detail">${award.detail}</p>` : ''}
+        <h3>${award.title}</h3>${award.subtitle ? `<p class="honor-detail">${award.subtitle}</p>` : ''}${award.detail ? `<p class="honor-detail">${award.detail}</p>` : ''}
         <div class="honor-card-bottom"><time datetime="${awardDateTime(award.date)}">${award.date}</time>${awardLinks(award)}</div>
     </article>`).join('')}</div>
   </section>`).join('')}
